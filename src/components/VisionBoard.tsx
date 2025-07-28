@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Plus, Image, Scissors, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const VisionBoard = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col h-screen bg-background">
       {/* Header */}
@@ -91,7 +93,7 @@ const VisionBoard = () => {
       {/* Bottom Navigation */}
       <nav className="bg-white/80 backdrop-blur-lg border-t border-white/20 px-4 py-2">
         <div className="flex items-center justify-around max-w-sm mx-auto">
-          <Button variant="ghost" size="icon" className="text-muted-foreground">
+          <Button variant="ghost" size="icon" className="text-muted-foreground" onClick={() => navigate("/chat")}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
