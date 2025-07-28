@@ -24,29 +24,29 @@ const VisionBoard = () => {
           <div className="absolute inset-4">
             {/* House Image */}
             <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-32 h-24 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full bg-gradient-to-b from-blue-200 to-green-200 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-600">🏠 Dream Home</span>
+              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                <span className="text-xs text-gray-400">+ Add Photo</span>
               </div>
             </div>
 
             {/* Car Image */}
             <div className="absolute top-16 right-8 w-28 h-20 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full bg-gradient-to-br from-gray-200 to-white rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-600">🚗 BMW X5</span>
+              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                <span className="text-xs text-gray-400">+ Add Photo</span>
               </div>
             </div>
 
             {/* Person with sunglasses */}
             <div className="absolute top-32 left-8 w-20 h-24 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full bg-gradient-to-b from-yellow-100 to-orange-100 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-600">😎</span>
+              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                <span className="text-xs text-gray-400">+ Add Photo</span>
               </div>
             </div>
 
             {/* Dog cutout */}
             <div className="absolute top-36 left-24 w-16 h-16 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full bg-gradient-to-br from-amber-100 to-orange-200 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-gray-600">🐕</span>
+              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                <span className="text-xs text-gray-400">+ Add Photo</span>
               </div>
             </div>
           </div>
