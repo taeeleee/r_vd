@@ -19,36 +19,64 @@ const VisionBoard = () => {
       {/* Main Canvas Area */}
       <main className="flex-1 p-4 relative overflow-hidden">
         <div className="h-full rounded-2xl bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass relative overflow-hidden">
-          {/* Empty State */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-            <div className="bg-gradient-glass rounded-full p-8 mb-6 backdrop-blur-lg border border-white/20 shadow-glass">
-              <Sparkles className="w-12 h-12 text-muted-foreground" />
+          
+          {/* Vision Board Items */}
+          <div className="absolute inset-4">
+            {/* House Image */}
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-32 h-24 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
+              <div className="w-full h-full bg-gradient-to-b from-blue-200 to-green-200 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-600">🏠 Dream Home</span>
+              </div>
             </div>
-            <h2 className="text-xl font-semibold text-foreground mb-2">Create Your Vision</h2>
-            <p className="text-muted-foreground mb-8 max-w-sm">
-              Add photos, cutouts, and inspiration to build your perfect vision board
-            </p>
+
+            {/* Car Image */}
+            <div className="absolute top-16 right-8 w-28 h-20 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
+              <div className="w-full h-full bg-gradient-to-br from-gray-200 to-white rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-600">🚗 BMW X5</span>
+              </div>
+            </div>
+
+            {/* Person with sunglasses */}
+            <div className="absolute top-32 left-8 w-20 h-24 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
+              <div className="w-full h-full bg-gradient-to-b from-yellow-100 to-orange-100 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-600">😎</span>
+              </div>
+            </div>
+
+            {/* Dog cutout */}
+            <div className="absolute top-36 left-24 w-16 h-16 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
+              <div className="w-full h-full bg-gradient-to-br from-amber-100 to-orange-200 rounded-lg flex items-center justify-center">
+                <span className="text-xs text-gray-600">🐕</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Progress Cards */}
+          <div className="absolute bottom-32 left-4 right-4 grid grid-cols-2 gap-4">
+            <Card className="p-6 bg-soft-yellow/70 backdrop-blur-lg border border-white/30 shadow-glass">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-700 mb-1">12</div>
+                <div className="text-sm text-gray-600">Daily Goals</div>
+              </div>
+            </Card>
             
-            {/* Quick Action Cards */}
-            <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
-              <Card className="p-4 bg-soft-yellow/50 backdrop-blur-lg border border-white/30 shadow-soft hover:shadow-glass transition-all duration-300">
-                <div className="flex flex-col items-center text-center space-y-2">
-                  <div className="bg-white/60 rounded-lg p-2">
-                    <Image className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground">Add Photo</span>
-                </div>
-              </Card>
-              
-              <Card className="p-4 bg-soft-blue/50 backdrop-blur-lg border border-white/30 shadow-soft hover:shadow-glass transition-all duration-300">
-                <div className="flex flex-col items-center text-center space-y-2">
-                  <div className="bg-white/60 rounded-lg p-2">
-                    <Scissors className="w-6 h-6 text-muted-foreground" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground">Add Cutout</span>
-                </div>
-              </Card>
-            </div>
+            <Card className="p-6 bg-soft-blue/70 backdrop-blur-lg border border-white/30 shadow-glass">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-700 mb-1">85%</div>
+                <div className="text-sm text-gray-600">Progress</div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Greeting Section */}
+          <div className="absolute bottom-4 left-4 right-4 text-center">
+            <h2 className="text-xl font-semibold text-foreground mb-2">Good Morning! ☀️</h2>
+            <p className="text-muted-foreground mb-4 text-sm">
+              Ready to start your day with some positive habits?
+            </p>
+            <Button className="bg-gray-800 text-white hover:bg-gray-700 px-8 py-2 rounded-full">
+              Let's Begin
+            </Button>
           </div>
 
           {/* Floating Add Button */}
