@@ -82,16 +82,29 @@ const CalendarPage = () => {
       </header>
 
       {/* Content */}
-      <main className="flex-1 p-4 overflow-hidden flex flex-col">
+      <main className="flex-1 overflow-hidden flex flex-col p-4">
         
         {/* Calendar */}
-        <Card className="flex-1 p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass flex flex-col">
+        <div className="flex-1 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass rounded-lg p-6 flex flex-col">
           <Calendar
             mode="single"
             selected={selectedDate}
             onSelect={setSelectedDate}
             onDayClick={handleDateClick}
-            className="w-full flex-1 pointer-events-auto [&>div]:h-full [&_.rdp-months]:h-full [&_.rdp-month]:h-full [&_.rdp-table]:h-full"
+            className="w-full h-full flex-1 pointer-events-auto !h-full [&>div]:!h-full [&_.rdp]:!h-full [&_.rdp-months]:!h-full [&_.rdp-month]:!h-full [&_.rdp-table]:!h-full [&_.rdp-tbody]:!h-full [&_.rdp-row]:!flex-1"
+            classNames={{
+              months: "flex flex-col h-full",
+              month: "flex flex-col h-full flex-1",
+              table: "w-full h-full flex-1",
+              head_row: "flex mb-4",
+              head_cell: "text-muted-foreground rounded-md flex-1 font-normal text-[0.8rem] text-center",
+              row: "flex w-full flex-1",
+              cell: "flex-1 text-center text-sm relative focus-within:relative focus-within:z-20 h-full min-h-[60px]",
+              day: "h-full w-full p-0 font-normal aria-selected:opacity-100 flex items-center justify-center hover:bg-accent hover:text-accent-foreground",
+              day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+              day_today: "bg-accent text-accent-foreground",
+              day_outside: "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30"
+            }}
             modifiers={{
               hasEvents: (date) => getEventsForDate(date).length > 0
             }}
@@ -103,7 +116,7 @@ const CalendarPage = () => {
               }
             }}
           />
-        </Card>
+        </div>
 
       </main>
 
