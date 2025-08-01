@@ -11,6 +11,7 @@ import GoalDetail from "./pages/GoalDetail";
 import Calendar from "./pages/Calendar";
 import HabitTracker from "./pages/HabitTracker";
 import GratitudeJournal from "./pages/GratitudeJournal";
+import SelfNarrative from "./pages/SelfNarrative";
 import Customize from "./pages/Customize";
 import NotFound from "./pages/NotFound";
 
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/habit-tracker" element={<HabitTracker />} />
               <Route path="/gratitude-journal" element={<GratitudeJournal />} />
+              <Route path="/self-narrative" element={<SelfNarrative />} />
               <Route path="/customize" element={<Customize />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
