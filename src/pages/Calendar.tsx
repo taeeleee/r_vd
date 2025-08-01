@@ -81,16 +81,16 @@ const CalendarPage = () => {
 
       {/* Content */}
       <main className="flex-1 p-4 overflow-y-auto">
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="h-full">
           
           {/* Calendar */}
-          <Card className="p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
+          <Card className="h-full p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
             <Calendar
               mode="single"
               selected={selectedDate}
               onSelect={setSelectedDate}
               onDayClick={handleDateClick}
-              className="w-full pointer-events-auto"
+              className="w-full h-full pointer-events-auto"
               modifiers={{
                 hasEvents: (date) => getEventsForDate(date).length > 0
               }}
@@ -104,62 +104,62 @@ const CalendarPage = () => {
             />
           </Card>
 
-          {/* Add Event Button */}
-          <div className="flex justify-center">
-            <Dialog open={showEventDialog} onOpenChange={setShowEventDialog}>
-              <DialogTrigger asChild>
-                <Button className="w-full max-w-md">
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add a Task
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Add New Event</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="title">Event Title</Label>
-                    <Input
-                      id="title"
-                      value={newEvent.title}
-                      onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-                      placeholder="Please enter what to do"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label>Select Category</Label>
-                    <div className="grid grid-cols-2 gap-2 mt-2">
-                      {categories.map((category) => (
-                        <Button
-                          key={category.name}
-                          variant={newEvent.category === category.name ? "default" : "outline"}
-                          onClick={() => setNewEvent({ ...newEvent, category: category.name })}
-                          className="justify-start"
-                        >
-                          <div className={`w-3 h-3 rounded-full ${category.color} mr-2`} />
-                          {category.name}
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-2">
-                    <Button variant="outline" onClick={() => setShowEventDialog(false)} className="flex-1">
-                      Cancel
-                    </Button>
-                    <Button onClick={addEvent} className="flex-1">
-                      Add
-                    </Button>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </div>
-
         </div>
       </main>
+
+      {/* Fixed Add Task Button at Bottom */}
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <Dialog open={showEventDialog} onOpenChange={setShowEventDialog}>
+          <DialogTrigger asChild>
+            <Button className="px-8 py-3 rounded-full shadow-lg bg-primary hover:bg-primary/90">
+              <Plus className="w-4 h-4 mr-2" />
+              Add a Task
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Add New Event</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="title">Event Title</Label>
+                <Input
+                  id="title"
+                  value={newEvent.title}
+                  onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+                  placeholder="Please enter what to do"
+                />
+              </div>
+              
+              <div>
+                <Label>Select Category</Label>
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  {categories.map((category) => (
+                    <Button
+                      key={category.name}
+                      variant={newEvent.category === category.name ? "default" : "outline"}
+                      onClick={() => setNewEvent({ ...newEvent, category: category.name })}
+                      className="justify-start"
+                    >
+                      <div className={`w-3 h-3 rounded-full ${category.color} mr-2`} />
+                      {category.name}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="flex gap-2">
+                <Button variant="outline" onClick={() => setShowEventDialog(false)} className="flex-1">
+                  Cancel
+                </Button>
+                <Button onClick={addEvent} className="flex-1">
+                  Add
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
 
       {/* Day Events Bottom Sheet */}
       {showDayEvents && selectedDate && (
