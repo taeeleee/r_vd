@@ -53,7 +53,7 @@ const VisionBoard = () => {
           </div>
 
           {/* Greeting Section */}
-          <div className="absolute bottom-12 left-3 right-3 text-center">
+          <div className="absolute bottom-20 left-3 right-3 text-center">
             <h2 className="text-lg font-semibold text-foreground mb-1">Good Morning! ☀️</h2>
             <p className="text-muted-foreground mb-3 text-xs">
               Ready to start your day with some positive habits?
