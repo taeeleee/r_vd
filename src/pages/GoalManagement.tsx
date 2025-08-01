@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Plus, CheckSquare, Clock, Heart } from "lucide-react";
+import { ArrowLeft, Plus, CheckSquare, Clock, Heart, FileStack } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface Goal {
@@ -62,14 +62,20 @@ const GoalManagement = () => {
           <ArrowLeft className="w-5 h-5" />
         </Button>
         <h1 className="text-lg font-medium text-foreground">목표 관리</h1>
-        <div className="w-10" />
+        <Button variant="ghost" size="icon" className="text-muted-foreground">
+          <FileStack className="w-5 h-5" />
+        </Button>
       </header>
 
       {/* Goals List */}
       <main className="flex-1 p-4 overflow-y-auto">
         <div className="space-y-4 max-w-2xl mx-auto">
           {goals.map((goal) => (
-            <Card key={goal.id} className="p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
+            <Card 
+              key={goal.id} 
+              className="p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass cursor-pointer hover:bg-white/80 transition-all duration-200"
+              onClick={() => navigate(`/goals/${goal.id}`)}
+            >
               <div className="mb-4">
                 <h3 className="text-lg font-semibold text-foreground mb-2">{goal.title}</h3>
                 <p className="text-sm text-muted-foreground">{goal.description}</p>
