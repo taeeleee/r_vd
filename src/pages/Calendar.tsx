@@ -5,7 +5,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowLeft, Plus } from "lucide-react";
+import { ArrowLeft, Plus, FileStack } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 
@@ -76,35 +76,35 @@ const CalendarPage = () => {
           <ArrowLeft className="w-5 h-5" />
         </Button>
         <h1 className="text-lg font-medium text-foreground">Calendar</h1>
-        <div className="w-10" />
+        <Button variant="ghost" size="icon" onClick={() => navigate("/goals")} className="text-muted-foreground">
+          <FileStack className="w-5 h-5" />
+        </Button>
       </header>
 
       {/* Content */}
-      <main className="flex-1 p-4 overflow-y-auto">
-        <div className="h-full">
-          
-          {/* Calendar */}
-          <Card className="h-full p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
-            <Calendar
-              mode="single"
-              selected={selectedDate}
-              onSelect={setSelectedDate}
-              onDayClick={handleDateClick}
-              className="w-full h-full pointer-events-auto"
-              modifiers={{
-                hasEvents: (date) => getEventsForDate(date).length > 0
-              }}
-              modifiersStyles={{
-                hasEvents: { 
-                  backgroundColor: 'hsl(var(--primary))', 
-                  color: 'hsl(var(--primary-foreground))',
-                  borderRadius: '6px'
-                }
-              }}
-            />
-          </Card>
+      <main className="flex-1 p-4 overflow-hidden flex flex-col">
+        
+        {/* Calendar */}
+        <Card className="flex-1 p-6 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass flex flex-col">
+          <Calendar
+            mode="single"
+            selected={selectedDate}
+            onSelect={setSelectedDate}
+            onDayClick={handleDateClick}
+            className="w-full flex-1 pointer-events-auto [&>div]:h-full [&_.rdp-months]:h-full [&_.rdp-month]:h-full [&_.rdp-table]:h-full"
+            modifiers={{
+              hasEvents: (date) => getEventsForDate(date).length > 0
+            }}
+            modifiersStyles={{
+              hasEvents: { 
+                backgroundColor: 'hsl(var(--primary))', 
+                color: 'hsl(var(--primary-foreground))',
+                borderRadius: '6px'
+              }
+            }}
+          />
+        </Card>
 
-        </div>
       </main>
 
       {/* Fixed Add Task Button at Bottom */}
