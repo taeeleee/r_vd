@@ -23,31 +23,11 @@ const VisionBoard = () => {
         <div className="h-full rounded-2xl bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass relative overflow-hidden">
           
           {/* Vision Board Items */}
-          <div className="absolute inset-4">
-            {/* Top row */}
-            <div className="absolute top-4 left-8 w-32 h-24 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
+          <div className="absolute inset-4 flex items-center justify-center">
+            {/* Single centered add photo box */}
+            <div className="w-40 h-32 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-3">
               <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                <span className="text-xs text-gray-400">+ Add Photo</span>
-              </div>
-            </div>
-
-            <div className="absolute top-4 right-8 w-28 h-20 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                <span className="text-xs text-gray-400">+ Add Photo</span>
-              </div>
-            </div>
-
-            {/* Middle row */}
-            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-24 h-28 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                <span className="text-xs text-gray-400">+ Add Photo</span>
-              </div>
-            </div>
-
-            {/* Bottom area */}
-            <div className="absolute top-40 left-12 w-20 h-16 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-2">
-              <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                <span className="text-xs text-gray-400">+ Add Photo</span>
+                <span className="text-sm text-gray-400">+ Add Photo</span>
               </div>
             </div>
           </div>
