@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ChatBot from "./pages/ChatBot";
 import GoalManagement from "./pages/GoalManagement";
 import GoalDetail from "./pages/GoalDetail";
+import Calendar from "./pages/Calendar";
 import Customize from "./pages/Customize";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/chat" element={<ChatBot />} />
           <Route path="/goals" element={<GoalManagement />} />
           <Route path="/goals/:goalId" element={<GoalDetail />} />
+          <Route path="/calendar" element={<Calendar />} />
           <Route path="/customize" element={<Customize />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -88,7 +88,10 @@ const GoalDetail = () => {
         <div className="space-y-4 max-w-2xl mx-auto">
           
           {/* Calendar */}
-          <Card className="p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
+          <Card 
+            className="p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass cursor-pointer hover:bg-white/80 transition-colors"
+            onClick={() => navigate("/calendar")}
+          >
             <h3 className="text-sm font-medium text-foreground mb-3">{currentMonth}</h3>
             <div className="grid grid-cols-7 gap-2 text-center">
               {weekDays.map((day, index) => (
