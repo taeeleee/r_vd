@@ -23,9 +23,9 @@ const VisionBoard = () => {
         <div className="h-full rounded-2xl bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass relative overflow-hidden">
           
           {/* Vision Board Items */}
-          <div className="absolute inset-4 flex items-center justify-center">
+          <div className="absolute inset-4">
             {/* Single centered add photo box */}
-            <div className="w-40 h-32 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-3">
+            <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-40 h-32 bg-white/80 backdrop-blur-lg rounded-xl border border-white/40 shadow-glass p-3">
               <div className="w-full h-full rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
                 <span className="text-sm text-gray-400">+ Add Photo</span>
               </div>
