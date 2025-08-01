@@ -55,7 +55,10 @@ const VisionBoard = () => {
             <p className="text-muted-foreground mb-4 text-sm">
               Ready to start your day with some positive habits?
             </p>
-            <Button className="bg-gray-800 text-white hover:bg-gray-700 px-8 py-2 rounded-full">
+            <Button 
+              className="bg-gray-800 text-white hover:bg-gray-700 px-8 py-2 rounded-full"
+              onClick={() => navigate("/goals")}
+            >
               Let's Begin
             </Button>
           </div>
