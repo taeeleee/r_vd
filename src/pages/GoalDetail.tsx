@@ -204,7 +204,11 @@ const GoalDetail = () => {
           </Card>
 
           {/* Gratitude Journal */}
-          <Card className="p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
+          <Card 
+            className="p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass cursor-pointer hover:bg-white/80 transition-colors"
+            onClick={() => navigate("/gratitude-journal")}
+          >
+            <h3 className="text-sm font-medium text-foreground mb-3">감사 일기</h3>
             <div className="space-y-2">
               {gratitudeEntries.map((entry) => (
                 <div key={entry.id} className="p-3 bg-white/50 rounded-lg">
