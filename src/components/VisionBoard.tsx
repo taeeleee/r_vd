@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Plus, Image, Scissors, Sparkles } from "lucide-react";
+import { Plus, Image, Scissors, Sparkles, Pencil } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const VisionBoard = () => {
@@ -60,12 +60,13 @@ const VisionBoard = () => {
             </Button>
           </div>
 
-          {/* Floating Add Button */}
+          {/* Floating Customize Button */}
           <Button 
             className="absolute bottom-6 right-6 h-14 w-14 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
             size="icon"
+            onClick={() => navigate("/customize")}
           >
-            <Plus className="w-6 h-6" />
+            <Pencil className="w-6 h-6 text-white" />
           </Button>
         </div>
       </main>
