@@ -20,8 +20,7 @@ const ChatBot = () => {
 
   const topics = [
     { id: "development", name: "자기계발", color: "bg-soft-blue/70" },
-    { id: "counseling", name: "상담", color: "bg-soft-yellow/70" },
-    { id: "growth", name: "성장 기록", color: "bg-primary/20" }
+    { id: "counseling", name: "상담", color: "bg-soft-yellow/70" }
   ];
 
   const handleSendMessage = () => {
