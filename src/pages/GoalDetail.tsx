@@ -4,10 +4,24 @@ import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowLeft, FileStack, Plus } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import { format } from "date-fns";
 
 interface TodoItem {
   id: number;
   text: string;
+  completed: boolean;
+}
+
+interface Habit {
+  id: number;
+  name: string;
+  color: string;
+  emoji: string;
+}
+
+interface HabitCompletion {
+  habitId: number;
+  date: string;
   completed: boolean;
 }
 
@@ -40,6 +54,18 @@ const GoalDetail = () => {
     { id: 3, text: "", completed: false }
   ]);
 
+  const [dailyHabits] = useState<Habit[]>([
+    { id: 1, name: "Workout", color: "bg-red-500", emoji: "💪" },
+    { id: 2, name: "Drink Water", color: "bg-blue-500", emoji: "💧" },
+    { id: 3, name: "Read", color: "bg-green-500", emoji: "📚" }
+  ]);
+
+  const [habitCompletions, setHabitCompletions] = useState<HabitCompletion[]>([
+    { habitId: 1, date: format(new Date(), "yyyy-MM-dd"), completed: true },
+    { habitId: 2, date: format(new Date(), "yyyy-MM-dd"), completed: false },
+    { habitId: 3, date: format(new Date(), "yyyy-MM-dd"), completed: true }
+  ]);
+
   const [habits, setHabits] = useState<HabitEntry[]>([
     { id: 1, date: "2025-01-21", completed: true },
     { id: 2, date: "2025-01-22", completed: true },
@@ -54,6 +80,23 @@ const GoalDetail = () => {
     setTodos(todos.map(todo => 
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
+  };
+
+  const toggleHabitCompletion = (habitId: number) => {
+    const today = format(new Date(), "yyyy-MM-dd");
+    setHabitCompletions(prev => 
+      prev.map(completion => 
+        completion.habitId === habitId && completion.date === today
+          ? { ...completion, completed: !completion.completed }
+          : completion
+      )
+    );
+  };
+
+  const isHabitCompleted = (habitId: number) => {
+    const today = format(new Date(), "yyyy-MM-dd");
+    const completion = habitCompletions.find(c => c.habitId === habitId && c.date === today);
+    return completion?.completed || false;
   };
 
   const currentDate = new Date();
@@ -97,9 +140,22 @@ const GoalDetail = () => {
               {weekDays.map((day, index) => (
                 <div key={index} className="text-xs text-muted-foreground mb-2">{day}</div>
               ))}
-              {weekDates.map((date, index) => (
-                <div key={index} className="text-sm text-foreground p-1">{date}</div>
-              ))}
+              {weekDates.map((date, index) => {
+                const dateObj = new Date(startOfWeek);
+                dateObj.setDate(startOfWeek.getDate() + index);
+                const isToday = dateObj.toDateString() === currentDate.toDateString();
+                
+                return (
+                  <div 
+                    key={index} 
+                    className={`text-sm text-foreground p-1 relative ${
+                      isToday ? 'bg-primary/20 rounded-full w-8 h-8 flex items-center justify-center mx-auto' : ''
+                    }`}
+                  >
+                    {date}
+                  </div>
+                );
+              })}
             </div>
           </Card>
 
@@ -131,8 +187,19 @@ const GoalDetail = () => {
             onClick={() => navigate("/habit-tracker")}
           >
             <h3 className="text-sm font-medium text-foreground mb-3">Habit Tracker</h3>
-            <div className="h-20 bg-gray-100/50 rounded-lg flex items-center justify-center">
-              <span className="text-sm text-muted-foreground">습관 추적 영역</span>
+            <div className="space-y-2">
+              {dailyHabits.map((habit) => (
+                <div key={habit.id} className="flex items-center space-x-3">
+                  <Checkbox 
+                    checked={isHabitCompleted(habit.id)}
+                    onCheckedChange={() => toggleHabitCompletion(habit.id)}
+                  />
+                  <span className="text-lg">{habit.emoji}</span>
+                  <span className={`text-sm ${isHabitCompleted(habit.id) ? 'line-through text-muted-foreground' : 'text-foreground'}`}>
+                    {habit.name}
+                  </span>
+                </div>
+              ))}
             </div>
           </Card>
 
