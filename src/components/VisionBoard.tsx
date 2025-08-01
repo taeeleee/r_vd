@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const VisionBoard = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col h-screen bg-background">
+    <div className="flex flex-col h-screen bg-background max-w-sm mx-auto">{/* iPhone 16 width */}
       {/* Header */}
       <header className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-lg border-b border-white/20">
         <Button variant="ghost" size="icon" className="text-muted-foreground">
@@ -53,7 +53,7 @@ const VisionBoard = () => {
           </div>
 
           {/* Progress Cards */}
-          <div className="absolute bottom-32 left-4 right-4 grid grid-cols-2 gap-4">
+          <div className="absolute bottom-60 left-4 right-4 grid grid-cols-2 gap-4">
             <Card className="p-6 bg-soft-yellow/70 backdrop-blur-lg border border-white/30 shadow-glass">
               <div className="text-center">
                 <div className="text-3xl font-bold text-gray-700 mb-1">12</div>
@@ -69,6 +69,35 @@ const VisionBoard = () => {
             </Card>
           </div>
 
+          {/* Action Buttons */}
+          <div className="absolute bottom-32 left-4 right-4 grid grid-cols-3 gap-3">
+            <Button variant="ghost" className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass rounded-xl hover:bg-white/70 transition-all">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mb-2 text-gray-600">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+              <span className="text-xs text-gray-600 font-medium">Shop</span>
+            </Button>
+            
+            <Button variant="ghost" className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass rounded-xl hover:bg-white/70 transition-all">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mb-2 text-gray-600">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+              <span className="text-xs text-gray-600 font-medium">Customize</span>
+            </Button>
+            
+            <Button variant="ghost" className="flex flex-col items-center p-4 bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass rounded-xl hover:bg-white/70 transition-all" onClick={() => navigate("/goals")}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mb-2 text-gray-600">
+                <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/>
+                <path d="M9 7v10"/>
+                <path d="M13 7v10"/>
+                <path d="M15 7v10"/>
+              </svg>
+              <span className="text-xs text-gray-600 font-medium">See Goals</span>
+            </Button>
+          </div>
+
           {/* Greeting Section */}
           <div className="absolute bottom-4 left-4 right-4 text-center">
             <h2 className="text-xl font-semibold text-foreground mb-2">Good Morning! ☀️</h2>
@@ -82,10 +111,10 @@ const VisionBoard = () => {
 
           {/* Floating Add Button */}
           <Button 
-            className="absolute bottom-6 right-6 h-14 w-14 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="absolute top-6 right-6 h-12 w-12 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
             size="icon"
           >
-            <Plus className="w-6 h-6" />
+            <Plus className="w-5 h-5" />
           </Button>
         </div>
       </main>
