@@ -126,7 +126,10 @@ const GoalDetail = () => {
           </Card>
 
           {/* Habit Tracker */}
-          <Card className="p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
+          <Card 
+            className="p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass cursor-pointer hover:bg-white/80 transition-colors"
+            onClick={() => navigate("/habit-tracker")}
+          >
             <h3 className="text-sm font-medium text-foreground mb-3">Habit Tracker</h3>
             <div className="h-20 bg-gray-100/50 rounded-lg flex items-center justify-center">
               <span className="text-sm text-muted-foreground">습관 추적 영역</span>
