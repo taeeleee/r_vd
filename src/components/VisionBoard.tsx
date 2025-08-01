@@ -14,7 +14,7 @@ const VisionBoard = () => {
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
         </Button>
-        <h1 className="text-lg font-medium text-foreground">Vision Board</h1>
+        <h1 className="text-lg font-medium text-foreground">r=vd</h1>
         <div className="w-10" />
       </header>
 
