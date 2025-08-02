@@ -19,13 +19,8 @@ const VisionBoard = () => {
       </header>
 
       {/* Main Canvas Area */}
-      <main className="flex-1 p-2 relative overflow-hidden">
-        <div className="h-full rounded-2xl bg-white/20 backdrop-blur-xl border border-white/40 shadow-2xl relative overflow-hidden" style={{
-          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%)',
-          backdropFilter: 'blur(20px) saturate(180%)',
-          WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-          boxShadow: '0 8px 32px rgba(31, 38, 135, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
-        }}>
+      <main className="flex-1 p-4 relative overflow-hidden">
+        <div className="h-full rounded-2xl bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass relative overflow-hidden">
           
           {/* Vision Board Items */}
           <div className="absolute inset-4">
