@@ -57,7 +57,7 @@ const GoalManagement = () => {
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] bg-background">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-lg border-b border-white/20">
+      <header className="flex items-center justify-between px-4 py-2 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg">
         <Button variant="ghost" size="icon" onClick={() => navigate("/")} className="text-muted-foreground">
           <ArrowLeft className="w-5 h-5" />
         </Button>
@@ -68,7 +68,7 @@ const GoalManagement = () => {
       </header>
 
       {/* Goals List */}
-      <main className="flex-1 p-4 overflow-y-auto">
+      <main className="flex-1 px-4 py-6 overflow-y-auto">
         <div className="space-y-4 max-w-2xl mx-auto">
           {goals.map((goal) => (
             <Card 
@@ -145,7 +145,7 @@ const GoalManagement = () => {
       </main>
 
       {/* Bottom Summary */}
-      <div className="p-4 bg-white/80 backdrop-blur-lg border-t border-white/20">
+      <div className="px-4 py-2 bg-white/10 backdrop-blur-xl border-t border-white/20 shadow-lg">
         <div className="max-w-2xl mx-auto">
           <div className="flex justify-between items-center text-sm">
             <span className="text-muted-foreground">총 {goals.length}개의 목표</span>
