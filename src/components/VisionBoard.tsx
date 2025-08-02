@@ -50,7 +50,7 @@ const VisionBoard = () => {
           </div>
 
           {/* Greeting Section */}
-          <div className="absolute bottom-4 left-4 right-4 text-center">
+          <div className="absolute bottom-12 left-4 right-4 text-center">
             <h2 className="text-lg font-semibold text-foreground mb-1">Good Morning! ☀️</h2>
             <p className="text-muted-foreground mb-3 text-xs">
               Ready to start your day with some positive habits?
@@ -65,11 +65,11 @@ const VisionBoard = () => {
 
           {/* Floating Customize Button */}
           <Button 
-            className="absolute bottom-6 right-6 h-14 w-14 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="absolute bottom-4 right-4 h-10 w-10 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
             size="icon"
             onClick={() => navigate("/customize")}
           >
-            <Pencil className="w-6 h-6 text-white" />
+            <Pencil className="w-4 h-4 text-white" />
           </Button>
         </div>
       </main>
