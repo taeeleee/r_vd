@@ -130,7 +130,7 @@ const Customize = () => {
       </main>
 
       {/* Bottom Action Buttons */}
-      <div className="p-4 bg-white/80 backdrop-blur-lg border-t border-white/20">
+      <div className="p-4 pb-20 bg-white/80 backdrop-blur-lg border-t border-white/20">
         <div className="flex gap-3">
           <Button variant="outline" className="flex-1 bg-white/70">
             Reset
