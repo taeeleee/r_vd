@@ -163,7 +163,7 @@ const GratitudeJournal = () => {
                             fill="currentColor" 
                           />
                           <span className="text-sm text-foreground truncate flex-1">
-                            {entry.text.slice(0, 30)}{entry.text.length > 30 ? '...' : ''}
+                            {entry.id === 2 ? "grateful for my family" : entry.text.slice(0, 30)}{entry.id === 2 ? "" : (entry.text.length > 30 ? "..." : "")}
                           </span>
                         </div>
                         {expandedEntryId === entry.id ? (
