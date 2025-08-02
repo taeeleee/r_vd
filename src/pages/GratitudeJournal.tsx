@@ -25,7 +25,7 @@ const GratitudeJournal = () => {
 
   const [gratitudeEntries, setGratitudeEntries] = useState<GratitudeEntry[]>([
     { id: 1, text: "오늘 네가 너무 감사하더라", date: format(new Date(), "yyyy-MM-dd"), gratitudeLevel: 8 },
-    { id: 2, text: "가족과 함께한 저녁 시간", date: format(new Date(), "yyyy-MM-dd"), gratitudeLevel: 9 },
+    { id: 2, text: "I am grateful that I was able to spend time with my family over dinner talking about how eachother's day went. Always forever grateful I have people who love and genuinely cares about the smallest things about me.", date: format(new Date(), "yyyy-MM-dd"), gratitudeLevel: 9 },
   ]);
 
   const selectedDateStr = format(selectedDate, "yyyy-MM-dd");
