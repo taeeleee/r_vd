@@ -69,12 +69,12 @@ const GratitudeJournal = () => {
       </header>
 
       {/* Content */}
-      <main className="flex-1 p-4 overflow-hidden">
-        <div className="flex h-full gap-4 max-w-6xl mx-auto">
+      <main className="flex-1 p-2 md:p-4 overflow-y-auto">
+        <div className="flex flex-col md:flex-row gap-4 max-w-6xl mx-auto h-full">
           
           {/* Calendar Section */}
-          <div className="flex-1">
-            <Card className="h-full p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
+          <div className="flex-1 min-h-[300px] md:min-h-0">
+            <Card className="h-full p-3 md:p-4 bg-white/70 backdrop-blur-lg border border-white/30 shadow-glass">
               <h3 className="text-sm font-medium text-foreground mb-4">날짜 선택</h3>
               <Calendar
                 mode="single"
