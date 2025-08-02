@@ -33,30 +33,30 @@ const VisionBoard = () => {
           </div>
 
           {/* Progress Cards */}
-          <div className="absolute bottom-32 left-4 right-4 grid grid-cols-2 gap-4">
-            <Card className="p-6 bg-soft-yellow/70 backdrop-blur-lg border border-white/30 shadow-glass">
+          <div className="absolute bottom-20 left-4 right-4 grid grid-cols-2 gap-3">
+            <Card className="p-4 bg-soft-yellow/70 backdrop-blur-lg border border-white/30 shadow-glass">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-700 mb-1">12</div>
-                <div className="text-sm text-gray-600">Daily Goals</div>
+                <div className="text-2xl font-bold text-gray-700 mb-1">12</div>
+                <div className="text-xs text-gray-600">Daily Goals</div>
               </div>
             </Card>
             
-            <Card className="p-6 bg-soft-blue/70 backdrop-blur-lg border border-white/30 shadow-glass">
+            <Card className="p-4 bg-soft-blue/70 backdrop-blur-lg border border-white/30 shadow-glass">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-700 mb-1">85%</div>
-                <div className="text-sm text-gray-600">Progress</div>
+                <div className="text-2xl font-bold text-gray-700 mb-1">85%</div>
+                <div className="text-xs text-gray-600">Progress</div>
               </div>
             </Card>
           </div>
 
           {/* Greeting Section */}
           <div className="absolute bottom-4 left-4 right-4 text-center">
-            <h2 className="text-xl font-semibold text-foreground mb-2">Good Morning! ☀️</h2>
-            <p className="text-muted-foreground mb-4 text-sm">
+            <h2 className="text-lg font-semibold text-foreground mb-1">Good Morning! ☀️</h2>
+            <p className="text-muted-foreground mb-3 text-xs">
               Ready to start your day with some positive habits?
             </p>
             <Button 
-              className="bg-gray-800 text-white hover:bg-gray-700 px-8 py-2 rounded-full"
+              className="bg-gray-800 text-white hover:bg-gray-700 px-6 py-1.5 rounded-full text-sm"
               onClick={() => navigate("/goals")}
             >
               Let's Begin

@@ -25,7 +25,7 @@ const Customize = () => {
   ];
 
   return (
-    <div className="flex flex-col h-screen bg-background">
+    <div className="flex flex-col h-[calc(100vh-80px)] bg-background">
       {/* Header */}
       <header className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-lg border-b border-white/20">
         <Button 
