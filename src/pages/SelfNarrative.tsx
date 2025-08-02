@@ -119,7 +119,7 @@ const SelfNarrative = () => {
           <Tabs defaultValue="timeline" className="h-full">
             <TabsList className="grid w-full grid-cols-3 mb-4">
               <TabsTrigger value="timeline" className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
+                <Calendar className="w-5 h-5" />
                 인생 타임라인
               </TabsTrigger>
               <TabsTrigger value="letters" className="flex items-center gap-2">
