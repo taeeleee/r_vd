@@ -51,7 +51,7 @@ const VisionBoard = () => {
 
           {/* Floating Customize Button */}
           <Button 
-            className="absolute bottom-44 right-4 h-10 w-10 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="absolute bottom-52 right-4 h-10 w-10 rounded-full bg-primary/90 backdrop-blur-lg border border-white/20 shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-105"
             size="icon"
             onClick={() => navigate("/customize")}
           >
