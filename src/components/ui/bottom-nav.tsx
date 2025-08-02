@@ -6,7 +6,7 @@ const BottomNav = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg border-t border-white/20 px-4 py-2 z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white/20 backdrop-blur-xl border-t border-white/30 px-4 py-1.5 z-50 shadow-lg">
       <div className="flex items-center justify-around max-w-sm mx-auto">
         <Button variant="ghost" size="icon" className="text-muted-foreground" onClick={() => navigate("/chat")}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
