@@ -121,7 +121,7 @@ const CalendarPage = () => {
       </main>
 
       {/* Fixed Add Task Button at Bottom */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50">
         <Dialog open={showEventDialog} onOpenChange={setShowEventDialog}>
           <DialogTrigger asChild>
             <Button className="px-8 py-3 rounded-full shadow-lg bg-primary hover:bg-primary/90">
