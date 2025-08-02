@@ -149,7 +149,7 @@ const GoalDetail = () => {
                   <div 
                     key={index} 
                     className={`text-sm text-foreground p-1 relative ${
-                      isToday ? 'bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center mx-auto' : ''
+                      isToday ? 'bg-muted rounded-full w-8 h-8 flex items-center justify-center mx-auto' : ''
                     }`}
                   >
                     {date}
