@@ -42,10 +42,16 @@ const GoalDetail = () => {
   const { goalId } = useParams();
   
   // Mock data for the selected goal
+  const goals = {
+    1: { title: "건강한 라이프스타일 만들기", description: "매일 운동하고 건강한 식단 유지하기" },
+    2: { title: "독서 습관 기르기", description: "매일 30분 이상 독서하기" },
+    3: { title: "TOEIC 점수 향상 목표", description: "토익 900점 달성하기" }
+  };
+  
+  const currentGoalId = parseInt(goalId || "1");
   const goal = {
-    id: parseInt(goalId || "1"),
-    title: "건강한 라이프스타일 만들기",
-    description: "매일 운동하고 건강한 식단 유지하기"
+    id: currentGoalId,
+    ...goals[currentGoalId as keyof typeof goals]
   };
 
   const [todos, setTodos] = useState<TodoItem[]>([
