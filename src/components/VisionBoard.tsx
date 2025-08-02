@@ -8,7 +8,7 @@ const VisionBoard = () => {
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] bg-background">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg">
+      <header className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-lg border-b border-white/20">
         <Button variant="ghost" size="icon" className="text-muted-foreground">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
@@ -19,7 +19,7 @@ const VisionBoard = () => {
       </header>
 
       {/* Main Canvas Area */}
-      <main className="flex-1 px-4 py-6 relative overflow-hidden">
+      <main className="flex-1 p-4 relative overflow-hidden">
         <div className="h-full rounded-2xl bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass relative overflow-hidden">
           
           {/* Vision Board Items */}

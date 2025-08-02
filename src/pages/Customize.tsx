@@ -27,7 +27,7 @@ const Customize = () => {
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] bg-background">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg">
+      <header className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-lg border-b border-white/20">
         <Button 
           variant="ghost" 
           size="icon" 
@@ -43,7 +43,7 @@ const Customize = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col px-4 py-6">
+      <main className="flex-1 flex flex-col p-4">
         {/* Character Preview Area */}
         <div className="flex-1 bg-white/60 backdrop-blur-lg border border-white/30 shadow-glass rounded-2xl p-6 mb-4">
           <div className="flex items-center justify-center h-full">
@@ -130,7 +130,7 @@ const Customize = () => {
       </main>
 
       {/* Bottom Action Buttons */}
-      <div className="px-4 py-2 pb-20 bg-white/10 backdrop-blur-xl border-t border-white/20 shadow-lg">
+      <div className="p-4 pb-20 bg-white/80 backdrop-blur-lg border-t border-white/20">
         <div className="flex gap-3">
           <Button variant="outline" className="flex-1 bg-white/70">
             Reset

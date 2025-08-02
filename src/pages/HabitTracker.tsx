@@ -104,7 +104,7 @@ const HabitTracker = () => {
   return (
     <div className="flex flex-col h-screen bg-background">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg">
+      <header className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-lg border-b border-white/20">
         <Button variant="ghost" size="icon" onClick={() => navigate(-1)} className="text-muted-foreground">
           <ArrowLeft className="w-5 h-5" />
         </Button>
@@ -115,7 +115,7 @@ const HabitTracker = () => {
       </header>
 
       {/* Content */}
-      <main className="flex-1 px-4 py-6 overflow-y-auto">
+      <main className="flex-1 p-4 overflow-y-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto h-full">
           
           {/* Calendar Section */}
