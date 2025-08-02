@@ -49,9 +49,8 @@ const GoalDetail = () => {
   };
 
   const [todos, setTodos] = useState<TodoItem[]>([
-    { id: 1, text: "LC 한시간 연습", completed: true },
-    { id: 2, text: "LC 밥 잘 챙겨", completed: true },
-    { id: 3, text: "", completed: false }
+    { id: 1, text: "RC 인강듣기", completed: true },
+    { id: 2, text: "LC 한시간 연습", completed: true }
   ]);
 
   const [dailyHabits] = useState<Habit[]>([
